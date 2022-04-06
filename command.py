@@ -48,32 +48,6 @@ try:
                 GPIO.output(LEFT_NEG,True)
                 GPIO.output(RIGHT_POS,True)
                 GPIO.output(RIGHT_NEG,False)
-            elif char == ord('d'):
-                GPIO.output(LEFT_NEG,True)
-                GPIO.output(RIGHT_NEG,True)
-                time.sleep(.5)
-                GPIO.output(LEFT_POS,True)
-                GPIO.output(LEFT_NEG,False)
-                GPIO.output(RIGHT_POS,True)
-                GPIO.output(RIGHT_NEG,False)
-                time.sleep(.5)
-                GPIO.output(LEFT_POS,True)
-                GPIO.output(LEFT_NEG,False)
-                GPIO.output(RIGHT_POS,False)
-                GPIO.output(RIGHT_NEG,True)
-                time.sleep(.5)
-                GPIO.output(LEFT_POS,False)
-                GPIO.output(LEFT_NEG,True)
-                GPIO.output(RIGHT_POS,True)
-                GPIO.output(RIGHT_NEG,False)
-                time.sleep(.5)
-                GPIO.output(LEFT_NEG,False)
-                GPIO.output(RIGHT_POS,False)
-            elif char == 10:
-                GPIO.output(LEFT_POS,False)
-                GPIO.output(LEFT_NEG,False)
-                GPIO.output(RIGHT_POS,False)
-                GPIO.output(RIGHT_NEG,False)
             elif char == ord('s'):
                 GPIO.output(LEFT_POS,False)
                 GPIO.output(LEFT_NEG,False)
@@ -82,6 +56,10 @@ try:
              
 finally:
     #Close down curses properly, inc turn echo back on!
+    GPIO.output(LEFT_POS,False)
+    GPIO.output(LEFT_NEG,False)
+    GPIO.output(RIGHT_POS,False)
+    GPIO.output(RIGHT_NEG,False)
     curses.nocbreak(); screen.keypad(0); curses.echo()
     curses.endwin()
     GPIO.cleanup()
