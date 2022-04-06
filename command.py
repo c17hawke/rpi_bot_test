@@ -74,6 +74,11 @@ try:
                 GPIO.output(LEFT_NEG,False)
                 GPIO.output(RIGHT_POS,False)
                 GPIO.output(RIGHT_NEG,False)
+            elif char == ord('s'):
+                GPIO.output(LEFT_POS,False)
+                GPIO.output(LEFT_NEG,False)
+                GPIO.output(RIGHT_POS,False)
+                GPIO.output(RIGHT_NEG,False)
              
 finally:
     #Close down curses properly, inc turn echo back on!
