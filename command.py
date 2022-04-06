@@ -5,7 +5,7 @@ import time
 
 #set GPIO numbering mode and define output pins
 LEFT_POS = 6
-LEFT_NEG = RIGHT_POS
+LEFT_NEG = 13
 RIGHT_POS = 19
 RIGHT_NEG = 26
 
